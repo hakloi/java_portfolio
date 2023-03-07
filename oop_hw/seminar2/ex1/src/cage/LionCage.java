@@ -6,7 +6,7 @@ import animals.Animals;
 
 public class LionCage implements AnimalCage{
     int clean;
-    private ArrayList lions;
+    private ArrayList<Integer> lions;
 
     public LionCage(){
         lions = new ArrayList();

@@ -3,23 +3,28 @@ package cage;
 import animals.Animals;
 
 public class WolfCage implements AnimalCage{
+    int clean;
+    private ArrayList<Integer> wolves;
+
+    public WolfCage(){
+        wolves = new ArrayList();
+    }
 
     @Override
     public int addAnimal(Animals animals) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'addAnimal'");
+        wolves.add(animals);
+        return wolves.size();
     }
 
     @Override
     public int deliverFood(int foodWeight) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'deliverFood'");
+        return 0;
     }
 
     @Override
     public int cleanCage() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'cleanCage'");
+        clean = 0;
+        return clean;
     }
 
     
