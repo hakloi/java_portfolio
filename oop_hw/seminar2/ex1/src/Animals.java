@@ -9,9 +9,7 @@ public abstract class Animals {
         this.limbs = limbs;
     }
 
-    public void feed(int foodWeight){
-        weight = weight + foodWeight;
-    }
+    abstract void feed(int foodWeight);
 
     public int getAge(){
         return age;
