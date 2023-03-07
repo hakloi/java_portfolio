@@ -1,3 +1,4 @@
+package animals;
 public abstract class Animals {
     private int age;
     private int weight;
@@ -9,7 +10,15 @@ public abstract class Animals {
         this.limbs = limbs;
     }
 
-    abstract void feed(int foodWeight);
+    public void feed(int foodWeight){
+        if(this.weight + foodWeight <= getMaxWeight()) {
+            this.weight =+ foodWeight;
+        } else {
+            System.out.println("Max weight exceeded!");
+        }
+    }
+
+    public abstract int getMaxWeight();
 
     public int getAge(){
         return age;

@@ -1,8 +1,10 @@
+package animals;
 public class Lion extends Animals {
-    private int maneVolume;
+    protected int maneVolume;
 
     protected static final int MAX_WEIGHT = 100;
     protected static final String TYPE = "Lion";
+
 
     public Lion(int age, int weight, int limbs, int maneVolume){
         super(age, weight, limbs);
@@ -18,7 +20,13 @@ public class Lion extends Animals {
     }
 
     @Override
-    void feed(int foodWeight){
-        if(weight + )
+    public String getType() {
+        return TYPE;
     }
+
+    @Override
+    public int getMaxWeight() {
+        return MAX_WEIGHT;
+    }
+    
 }
