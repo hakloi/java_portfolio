@@ -9,5 +9,6 @@ public class LionFactory {
 
     static public ArrayList<Lion> createLions(int lionCount){
         ArrayList<Lion> lionInCage = new ArrayList<>(lionCount);
+        return lionInCage;
     }
 }
