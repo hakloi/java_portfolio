@@ -9,6 +9,9 @@ public class Drink {
         this.volume = volume;
     }
 
+    public Drink(Integer id2, String name2, Integer volume2, Integer cost) {
+    }
+
     @Override
     public String toString() {
         return "Drink [id=" + id + ", name=" + name + ", volume=" + volume + "]";

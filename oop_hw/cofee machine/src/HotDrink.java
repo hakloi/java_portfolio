@@ -1,16 +1,17 @@
-public class HotDrink {
-    protected int volume;
-    protected String name;
-    protected int cost;
+public class HotDrink extends Drink{
+    private Integer tempr;
 
-    public HotDrink(String name, int volume, int cost) {
-        this.name = name;
-        this.volume = volume;
-        this.cost = cost;
+    public HotDrink(Integer id, String name, Integer volume, Integer cost, Integer tempr){
+        super(id, name, volume, cost);
+        this.tempr = tempr;
     }
 
-    public String getInfo() {
-        return String.format("Name: %s  Volume: %d  Temp: %d  Cost: %d",
-                this.name, this.volume, this.temperature, this.cost));
+    public Integer getTemperature() {
+        return tempr;
+    } 
+
+    @Override
+    public String toString() {
+        return "Name: " + name + "; Price: " + cost + "; Volume: " + volume + "; Temp: " + tempr  ;
     }
 }
