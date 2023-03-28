@@ -11,7 +11,7 @@ public class VendingMachine {
         list = new ArrayList<HotDrink>();
     }
 
-    public ArrayList getHotDrinkByName(Integer id, Integer volume, Integer temperature){
+    public ArrayList getHotDrink(Integer id, Integer volume, Integer temperature){
         ArrayList<HotDrink> result = new ArrayList<HotDrink>();
         boolean have = false;
         for(HotDrink Item : list){

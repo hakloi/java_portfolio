@@ -11,24 +11,24 @@ public class Program {
         // code begins
         VendingMachine machine = new VendingMachine();
         machine.addHotDrink(new HotDrink(1, "Cappucino", 200, 100, 70));
-        machine.addHotDrink(new HotDrink(1, "Cappucino", 300, 100, 70));
+        machine.addHotDrink(new HotDrink(1, "Cappucino", 300, 130, 70));
         machine.addHotDrink(new HotDrink(1, "Cappucino", 200, 100, 80));
-        machine.addHotDrink(new HotDrink(1, "Cappucino", 300, 100, 80));
+        machine.addHotDrink(new HotDrink(1, "Cappucino", 300, 130, 80));
 
         machine.addHotDrink(new HotDrink(2, "Latte", 200, 100, 70));
-        machine.addHotDrink(new HotDrink(2, "Latte", 300, 100, 70));
+        machine.addHotDrink(new HotDrink(2, "Latte", 300, 130, 70));
         machine.addHotDrink(new HotDrink(2, "Latte", 200, 100, 80));
-        machine.addHotDrink(new HotDrink(2, "Latte", 300, 100, 80));
+        machine.addHotDrink(new HotDrink(2, "Latte", 300, 130, 80));
 
         machine.addHotDrink(new HotDrink(3, "Espresso", 30, 60, 90));
-        machine.addHotDrink(new HotDrink(3, "Espresso", 60, 60, 90));
+        machine.addHotDrink(new HotDrink(3, "Espresso", 60, 80, 90));
         machine.addHotDrink(new HotDrink(3, "Espresso", 30, 60, 80));
-        machine.addHotDrink(new HotDrink(3, "Espresso", 60, 60, 80));
+        machine.addHotDrink(new HotDrink(3, "Espresso", 60, 80, 80));
 
         machine.addHotDrink(new HotDrink(4, "Mocachino", 200, 120, 70));
-        machine.addHotDrink(new HotDrink(4, "Mocachino", 300, 120, 70));
+        machine.addHotDrink(new HotDrink(4, "Mocachino", 300, 150, 70));
         machine.addHotDrink(new HotDrink(4, "Mocachino", 200, 120, 60));
-        machine.addHotDrink(new HotDrink(4, "Mocachino", 300, 120, 60));
+        machine.addHotDrink(new HotDrink(4, "Mocachino", 300, 150, 60));
         
         System.out.print("Welcome to our Coffee Shop!\n" +
                         "Choose drink and write id!\n" +
@@ -49,7 +49,7 @@ public class Program {
         in.close();
 
 
-        ArrayList list = machine.getHotDrinkByName(idCoffee, volumeCoffee, tempCoffee);
+        ArrayList list = machine.getHotDrink(idCoffee, volumeCoffee, tempCoffee);
         System.out.println(list);
 
     }
