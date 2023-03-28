@@ -11,22 +11,23 @@ public class VendingMachine {
         list = new ArrayList<HotDrink>();
     }
 
-    public ArrayList getHotDrinkByName(String searchName){
+    public ArrayList getHotDrinkByName(Integer id, Integer volume, Integer temperature){
         ArrayList<HotDrink> result = new ArrayList<HotDrink>();
+        boolean have = false;
         for(HotDrink Item : list){
-            if(Item.getName().contains(searchName)){
-                result.add(Item);
-            }
+            if(Item.getId().equals(id)){
+                if (Item.getVolume().equals(volume)) {
+                    if (Item.getTemperature().equals(temperature)) {
+                        result.add(Item);
+                        have = true;
+                    }
+                }
+            } 
         }
-        return result;
-    }
-
-    public ArrayList getHotDrinkByCost(String searchPriece){
-        ArrayList<HotDrink> result = new ArrayList<HotDrink>();
-        for(HotDrink Item : list){
-            if(Item.getName().equals(searchPriece)){
-                result.add(Item);
-            }
+        if (have == true){
+            System.out.print("Take your coffee! Have a good day!\n");
+        } else {
+            System.out.print("Sorry, we don't have this coffee. Try again!\n");
         }
         return result;
     }

@@ -1,4 +1,4 @@
-public class Drink {
+public abstract class Drink {
     protected Integer id;
     protected Integer volume;
     protected String name;
@@ -11,7 +11,7 @@ public class Drink {
         this.cost = cost;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -19,11 +19,11 @@ public class Drink {
         return name;
     }
 
-    public int getVolume() {
+    public Integer getVolume() {
         return volume;
     }
 
-    public int getCost() {
+    public Integer getCost() {
         return cost;
     }
 }
