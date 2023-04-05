@@ -9,4 +9,9 @@ public class Voter extends Person {
     public Boolean getVote(){
         return vote;
     }
+
+    @Override
+    public String toString() {
+        return "Name: " + name + "\nSurname: " + surname + "Vote: " + vote;
+    }
 }
