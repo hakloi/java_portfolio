@@ -1,3 +1,3 @@
 public abstract class Calculator implements Model{
-    double x, y;
+    int x, y;
 }
