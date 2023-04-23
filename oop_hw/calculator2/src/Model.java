@@ -1,5 +1,10 @@
 public interface Model {
-    int result();
+    double sum();
+    double diff();
+    double mult();
+    double div();
+    double extent();
+
     
     void setX(double x);
     

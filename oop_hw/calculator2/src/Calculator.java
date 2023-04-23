@@ -1,3 +1,4 @@
 public abstract class Calculator implements Model{
-    double x, y;
+    static double x;
+    static double y;
 }
