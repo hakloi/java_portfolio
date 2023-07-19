@@ -1,12 +1,7 @@
 public interface Model {
-    double sum();
-    double diff();
-    double mult();
-    double div();
-    double extent();
+    int result();
 
-    
-    void setX(double x);
-    
-    void setY(double y);
+    void setX(int value);
+
+    void setY(int value);
 }
