@@ -10,7 +10,7 @@
  __Algorithms__ are the procedures a software program uses to 
 manipulate the data in these structures.
  <ul>
-    <li></li>
+    <li>Binary Search</li>
     <li></li>
     <li></li>
     <li></li>
