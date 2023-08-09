@@ -10,6 +10,7 @@ public class App {
         System.out.println(DivideZero.Divide(10, 6));
         System.out.println(TryCatch.TryCatchException());
 
+        System.out.println(TryDouble.DivideArrays());
     }
 
     public static long getFileSize(File file) {
