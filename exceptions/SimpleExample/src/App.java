@@ -7,7 +7,8 @@ public class App {
         System.out.flush();
     
         System.out.println(getFileSize(new File("/Users/HP/Desktop/portfolio/books (in progress)/GameDesign.pdf")));
-        System.out.println(DivideZero.Divide(10, 0));
+        System.out.println(DivideZero.Divide(10, 6));
+        System.out.println(TryCatch.TryCatchException());
 
     }
 
