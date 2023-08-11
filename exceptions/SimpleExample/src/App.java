@@ -11,6 +11,11 @@ public class App {
         System.out.println(TryCatch.TryCatchException());
 
         System.out.println(TryDouble.DivideArrays());
+
+        for (int i = 0; i < 3; i++){
+            TrowDemo.Exc(i);
+            System.out.println();
+        }
     }
 
     public static long getFileSize(File file) {
