@@ -35,7 +35,7 @@ public class SketchOOP {
                 break;
 
             case 3: 
-                Task3 calculator = new Task3();
+                // Task3 calculator = new Task3();
 
 
             case 4: // implement task 4 here
