@@ -38,10 +38,10 @@ public class SketchOOP {
                 // Task3 calculator = new Task3();
 
 
-            case 4: // implement task 4 here
-            case 5: // implement task 5 here
-            case 6: // implement task 6 here
-            case 7: // implement task 7 here
+            case 4: 
+            case 5: 
+            case 6: 
+            case 7: 
             default:
                 System.out.println("Invalid input");
             }
