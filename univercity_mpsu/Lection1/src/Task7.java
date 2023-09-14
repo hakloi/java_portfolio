@@ -1,5 +1,3 @@
-import java.util.Random;
-
 public class Task7 {
     public static void main(String[] args) {
         //clean console
