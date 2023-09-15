@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "4AfdhMHm7mpKuB5yJLkjZbG2A+BO2Q04rTTCu/axRrAclAxnuF07X+zmL3XQgeZywsysEInhxy6QtNk/1mJXtg==",
+  "dgSpecHash": "xG4r+vz81z+cS1bVwMJtK4iyeyI7g8fxM3jhFAGm1mlzS2YU5lXHu87GL2wlW8HIehw3wY/3paoOm1qqnqDTEw==",
   "success": true,
   "projectFilePath": "c:\\Users\\HP\\Desktop\\portfolio\\java_portfolio\\OPTIONAL_C#\\FinalTask.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\HP\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.21\\microsoft.netcore.app.ref.6.0.21.nupkg.sha512",
-    "C:\\Users\\HP\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.21\\microsoft.windowsdesktop.app.ref.6.0.21.nupkg.sha512",
-    "C:\\Users\\HP\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.21\\microsoft.aspnetcore.app.ref.6.0.21.nupkg.sha512",
-    "C:\\Users\\HP\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.21\\microsoft.netcore.app.host.win-x64.6.0.21.nupkg.sha512"
+    "C:\\Users\\HP\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.22\\microsoft.netcore.app.ref.6.0.22.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.22\\microsoft.windowsdesktop.app.ref.6.0.22.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.22\\microsoft.aspnetcore.app.ref.6.0.22.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.22\\microsoft.netcore.app.host.win-x64.6.0.22.nupkg.sha512"
   ],
   "logs": []
 }
