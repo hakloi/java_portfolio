@@ -8,6 +8,7 @@ public class Task12{
         System.out.print("Input number: ");
         int n = scanner.getInputInt();
         int sum = 0;
+        scanner.close();
         while(n != 0){
             sum += (n % 10);
             n/=10;
