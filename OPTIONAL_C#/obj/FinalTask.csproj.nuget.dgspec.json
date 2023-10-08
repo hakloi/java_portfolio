@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\HP\\Desktop\\portfolio\\java_portfolio\\OPTIONAL_C#\\FinalTask.csproj": {}
+    "C:\\Users\\HP\\Desktop\\portfolio\\java_portfolio\\OPTIONAL_C#\\FinalTask.csproj": {}
   },
   "projects": {
-    "c:\\Users\\HP\\Desktop\\portfolio\\java_portfolio\\OPTIONAL_C#\\FinalTask.csproj": {
+    "C:\\Users\\HP\\Desktop\\portfolio\\java_portfolio\\OPTIONAL_C#\\FinalTask.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\HP\\Desktop\\portfolio\\java_portfolio\\OPTIONAL_C#\\FinalTask.csproj",
+        "projectUniqueName": "C:\\Users\\HP\\Desktop\\portfolio\\java_portfolio\\OPTIONAL_C#\\FinalTask.csproj",
         "projectName": "FinalTask",
-        "projectPath": "c:\\Users\\HP\\Desktop\\portfolio\\java_portfolio\\OPTIONAL_C#\\FinalTask.csproj",
+        "projectPath": "C:\\Users\\HP\\Desktop\\portfolio\\java_portfolio\\OPTIONAL_C#\\FinalTask.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\HP\\Desktop\\portfolio\\java_portfolio\\OPTIONAL_C#\\obj\\",
+        "outputPath": "C:\\Users\\HP\\Desktop\\portfolio\\java_portfolio\\OPTIONAL_C#\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config"
