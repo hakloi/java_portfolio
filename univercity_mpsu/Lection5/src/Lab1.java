@@ -49,12 +49,19 @@ public class Lab1 {
      * CHECKED!!!!!!!!
      */
      public static double computeArea(Point3d n1, Point3d n2, Point3d n3){
-        double a = n1.distanceTo(n2);
-        double b = n2.distanceTo(n3);
-        double c = n3.distanceTo(n1);
-        double p = (a+b+c)/2;
+        double end = 0;
+        if (n1.isSame(n2) == true || n2.isSame(n3) == true || n3.isSame(n1)){
+            System.out.println("These point the same! We can't make triangle");
+            return end;
+        } else {
+            double a = n1.distanceTo(n2);
+            double b = n2.distanceTo(n3);
+            double c = n3.distanceTo(n1);
+            double p = (a+b+c)/2;
 
-        double result = Math.sqrt(p*(p-a)*(p-b)*(p-c));
-        return result;
+            double result = Math.sqrt(p*(p-a)*(p-b)*(p-c));
+            return result;
+        }
+        
      }
 }

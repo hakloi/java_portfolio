@@ -45,27 +45,60 @@ public class Point3d {
     }
 
     // radius vector sqrt(x^2 + y^2 + z^2)
-    public void isSame(Point3d two) {
+    public boolean isSame(Point3d two) {
         System.out.println(this);
         System.out.println(two);
-        double term1 = Math.pow(this.xCoord, 2) + Math.pow(this.yCoord, 2) + Math.pow(this.zCoord, 2);
-        double radiusVector1 = Math.sqrt(term1);
+        // double term1 = Math.pow(this.xCoord, 2) + Math.pow(this.yCoord, 2) + Math.pow(this.zCoord, 2);
+        // double radiusVector1 = Math.sqrt(term1);
 
-        double term2 = Math.pow(two.xCoord, 2) + Math.pow(two.yCoord, 2) + Math.pow(two.zCoord, 2);
-        double radiusVector2 = Math.sqrt(term2);
+        // double term2 = Math.pow(two.xCoord, 2) + Math.pow(two.yCoord, 2) + Math.pow(two.zCoord, 2);
+        // double radiusVector2 = Math.sqrt(term2);
 
-        if (radiusVector1 == radiusVector2){
-            System.out.printf("\nPoints' distance are the same! \n" + 
-                                "Radius-vector = %.2f \n\n", radiusVector1);
-        } else if (radiusVector1 > radiusVector2){
-            System.out.printf("\nFirst distance greater!\n" +
-                                "Radius-vector 1 = %.2f\nRadius-vector 2 = %.2f \n\n", 
-                                 radiusVector1, radiusVector2);
-        } else  {
-            System.out.printf("\nSecond distance greater!\n" +
-                                "Radius-vector 1 = %.2f\nRadius-vector 2 = %.2f \n\n", 
-                                 radiusVector1, radiusVector2);
-        }
+        // if (radiusVector1 == radiusVector2){
+        //     System.out.printf("\nPoints' distance are the same! \n" + 
+        //                         "Radius-vector = %.2f \n\n", radiusVector1);
+        // } else if (radiusVector1 > radiusVector2){
+        //     System.out.printf("\nFirst distance greater!\n" +
+        //                         "Radius-vector 1 = %.2f\nRadius-vector 2 = %.2f \n\n", 
+        //                          radiusVector1, radiusVector2);
+        // } else  {
+        //     System.out.printf("\nSecond distance greater!\n" +
+        //                         "Radius-vector 1 = %.2f\nRadius-vector 2 = %.2f \n\n", 
+        //                          radiusVector1, radiusVector2);
+        // }
+        boolean isSameXYZ = false;
+        if (this.xCoord == two.xCoord && this.yCoord == two.yCoord &&
+            this.zCoord == two.zCoord){
+                System.out.println("These points the same!");
+                return isSameXYZ = true;
+            } else if (this.xCoord == two.xCoord && this.yCoord != two.yCoord &&
+            this.zCoord != two.zCoord){
+                System.out.println("X the same!");
+                return isSameXYZ;
+            } else if (this.xCoord != two.xCoord && this.yCoord == two.yCoord &&
+            this.zCoord == two.zCoord){
+                System.out.println("X and Z the same!");
+                return isSameXYZ;
+            } else if (this.xCoord == two.xCoord && this.yCoord == two.yCoord &&
+            this.zCoord != two.zCoord){
+                System.out.println("X and Y the same!");
+                return isSameXYZ;
+            } else if (this.xCoord != two.xCoord && this.yCoord != two.yCoord &&
+            this.zCoord == two.zCoord){
+                System.out.println("Z the same!");
+                return isSameXYZ;
+            } else if (this.xCoord != two.xCoord && this.yCoord == two.yCoord &&
+            this.zCoord == two.zCoord){
+                System.out.println("Y and Z the same!");
+                return isSameXYZ;
+            } else if (this.xCoord != two.xCoord && this.yCoord == two.yCoord &&
+            this.zCoord != two.zCoord){
+                System.out.println("Y the same!");
+                return isSameXYZ;
+            } else{
+                System.out.println("These point are totally not the same!");
+                return isSameXYZ;
+            }
     }
 
     // sqrt ((x2-x1)^2 + (y2-y1)^2 + (z2-z1)^2 )
