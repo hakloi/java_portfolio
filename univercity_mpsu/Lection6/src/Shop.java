@@ -38,8 +38,10 @@ public class Shop {
     public static class Product {
         private double weight;
         private double price;
+        private String name;
 
-        public Product(double weight, double price) {
+        public Product(String name, double weight, double price) {
+            this.name = name;
             this.weight = weight;
             this.price = price;
         }
@@ -51,5 +53,10 @@ public class Shop {
         public double getPrice() {
             return price;
         }
+
+        public String getName() {
+            return name;
+        }
+
     }
 }
