@@ -1,32 +1,26 @@
 import baseFold.Figure;
 import baseFold.Point2D;
 
-import javax.lang.model.type.ErrorType;
 import java.util.Scanner;
 
 public class Main {
     static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) throws Exception{
-        /*
-        Point2D[] mass = new Point2D[4];
-        for(int i = 0; i < mass.length; i++)
-            mass[i] = inputPoint3d();
-        for (Point2D point: mass)
-            System.out.println(point);
-        System.out.println(computeArea(mass[0],mass[1],mass[2]));
-        System.out.println(computeArea(mass[0],mass[1],mass[2],mass[3]));
+        // clear terminal
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
 
-        Point2D test = new Point2D();
-        System.out.println(computeArea(10,2,"1"));
-         */
+        Figure[] figures = new Figure[4];
+        figures[0] = new Square();
+        figures[1] = new Rhomb();
+        figures[2] = new Parallelogram();
+        figures[3] = new Polygon();
 
-        Triangle test = new Triangle();
-        System.out.println(test.computeArea());
-        System.out.println(test.computeArea());
-        System.out.println(test.getPerimetr());
+        for (Figure figure : figures) {
+            System.out.println(figure.toString());
+        }
+
     }
-
-
 
     private static double distanceBetweenPoint(Point2D p1, Point2D p2)
     {

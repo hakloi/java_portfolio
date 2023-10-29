@@ -91,6 +91,9 @@ public abstract class Figure {
             for (int i = 1; i <= points.length; i++)
                 area -= points[i%points.length].getX()*points[i-1].getY();
             return 0.5 * Math.abs(area);
+        } else if (type.toLowerCase().equals("square")) {
+            double side = sides[0]; // у квадрата все стороны равны
+            return Math.pow(side, 2);
         }
         else return 0;
     }
