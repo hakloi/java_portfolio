@@ -11,10 +11,16 @@ public class Main {
         System.out.flush();
 
         Figure[] figures = new Figure[4];
-        figures[0] = new Square();
-        figures[1] = new Rhomb();
-        figures[2] = new Parallelogram();
-        figures[3] = new Polygon();
+        System.out.println("Triangle: ");
+        figures[0] = new Triangle();
+        System.out.println("Square: ");
+        figures[1] = new Square();
+        System.out.println("Rhomb: ");
+        figures[2] = new Rhomb();
+        System.out.println("Parallelogram: ");
+        figures[3] = new Parallelogram();
+        System.out.println("Polygon: ");
+        figures[4] = new Polygon();
 
         for (Figure figure : figures) {
             System.out.println(figure.toString());
