@@ -94,7 +94,7 @@ public abstract class Figure {
         } else if (type.toLowerCase().equals("square")) {
             double side = sides[0]; // у квадрата все стороны равны
             return Math.pow(side, 2);
-        }
+        } 
         else return 0;
     }
 

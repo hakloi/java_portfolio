@@ -40,6 +40,10 @@ public class Triangle extends Figure {
         return (sides[0] < sides[1] + sides[2]) && (sides[1] < sides[2]+ sides[0]) && (sides[2] < sides[0] + sides[1]);
     }
 
+    @Override
+    public String toString() {
+        return "\nArea = " + computeArea() + "\nPerimeter = " + computePerimetr();
+    }
 
 
 

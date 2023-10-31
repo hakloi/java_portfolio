@@ -2,7 +2,6 @@ package baseFold;
 public class Point2D {
 
     private double xCoord;
-
     private double yCoord;
 
     public Point2D ( double x, double y) {

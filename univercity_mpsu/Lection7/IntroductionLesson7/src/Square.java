@@ -10,14 +10,27 @@ public class Square extends Figure {
         sides = new double[4];
         type = "square";
 
-        while (!checkSquare()) {
+        boolean exitLoop = false;
+
+        for (int i = 0; i < points.length; i++ ) {
             inputSquare();
             calcSides();
-            if (!checkSquare())
+            if (checkSquare()) {
+                exitLoop = true;
+                break;
+            } else {
                 System.err.println("Wrong points! Can't build square, try again!");
+            }
         }
-        perimetr = computePerimetr();
-        area = computeArea();
+
+        if (exitLoop) {
+            // квадрат построен
+            perimetr = computePerimetr();
+            area = computeArea();
+        } else {
+            // квадрат не был построен
+            System.err.println("Couldn't build a square with the given points!");
+        }
     }
 
     private void inputSquare() { inputPoint2d(); }
@@ -39,11 +52,6 @@ public class Square extends Figure {
 
     @Override
     public String toString() {
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("Square:\n");
-        stringBuilder.append("Perimeter: ").append(perimetr).append("\n");
-        stringBuilder.append("Area: ").append(area).append("\n");
-        stringBuilder.append("Sides: ").append(sides[0]).append(", ").append(sides[1]).append(", ").append(sides[2]).append(", ").append(sides[3]).append("\n");
-        return stringBuilder.toString();
+        return "\nArea = " + computeArea() + "\nPerimeter = " + computePerimetr();
     }
 }

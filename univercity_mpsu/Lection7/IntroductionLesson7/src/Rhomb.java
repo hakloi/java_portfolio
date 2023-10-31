@@ -8,24 +8,44 @@ public class Rhomb extends Figure {
         area = 0;
         points = new Point2D[4];
         sides = new double[4];
-        type = "rhombus";
+        type = "rhomb";
+        boolean exitLoop = false;
 
-        while (!checkRhombus()) {
-            inputRhombus();
+        for (int i = 0; i < points.length; i++ ) {
+            inputRhomb();
             calcSides();
-            if (!checkRhombus())
-                System.err.println("Wrong points! Can't build rhombus, try again!");
+            if (checkRhomb()) {
+                exitLoop = true;
+                break;
+            } else {
+                System.err.println("Wrong points! Can't build rhomb, try again!");
+            }
         }
-        perimetr = computePerimetr();
-        area = computeArea();
+
+        if (exitLoop) {
+            perimetr = computePerimetr();
+            area = computeArea();
+        } else {
+
+            System.err.println("Couldn't build a rhomb with the given points!");
+        }
     }
 
-    private void inputRhombus() { inputPoint2d(); }
+    private void inputRhomb() { inputPoint2d(); }
 
     private void calcSides() {
         for (int i = 0; i < sides.length; i++)
             sides[i] = distanceBetweenPoint(points[i], points[(i + 1) % sides.length]);
     }
+
+    @Override
+    public double computeArea() {
+        double diagonal1 = distanceBetweenPoint(points[0], points[2]);
+        double diagonal2 = distanceBetweenPoint(points[1], points[3]);
+        System.out.printf("\nDiagonal 1: %f; \nDiagonal 2: %f;", diagonal1, diagonal2);
+        return (diagonal1*diagonal2)/2;
+    }
+    
 
     private static double distanceBetweenPoint(Point2D p1, Point2D p2) {
         return Math.sqrt(
@@ -33,17 +53,38 @@ public class Rhomb extends Figure {
                         Math.pow(p1.getY() - p2.getY(), 2));
     }
 
-    private boolean checkRhombus() {
-        return (sides[0] == sides[1]) && (sides[1] == sides[2]) && (sides[2] == sides[3]);
+    private boolean checkRhomb() {
+        boolean allSidesEqual = true;
+        boolean diagonalsPerpendicular = true;
+
+        // equal sides
+        for (int i = 0; i < sides.length - 1; i++) {
+            if (sides[i] != sides[i + 1]) {
+                allSidesEqual = false;
+                break;
+            }
+        }
+        // check 1st and 4th sides for option
+        if (sides[0] != sides[sides.length - 1]) {
+            allSidesEqual = false;
+        }
+
+        // perpendicular diagonals
+        // k1 * k2 = -1
+        // k = tga = bc/ac = y2-y1/x2-x1
+        double angularСoeff1 = (points[1].getY() - points[0].getY()) / (points[1].getX() - points[0].getX());
+        System.out.println(angularСoeff1);
+        double angularСoeff2 = (points[2].getY() - points[1].getY()) / (points[2].getX() - points[1].getX());
+        System.out.println(angularСoeff2);
+        if (angularСoeff1 * angularСoeff2 != -1.0) {
+            diagonalsPerpendicular = false;
+        }
+
+        return allSidesEqual && diagonalsPerpendicular; // BOTH!!!!!!
     }
 
     @Override
     public String toString() {
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("Rhombus:\n");
-        stringBuilder.append("Perimeter: ").append(perimetr).append("\n");
-        stringBuilder.append("Area: ").append(area).append("\n");
-        stringBuilder.append("Sides: ").append(sides[0]).append(", ").append(sides[1]).append(", ").append(sides[2]).append(", ").append(sides[3]).append("\n");
-        return stringBuilder.toString();
+        return "\nArea = " + area + "\nPerimeter = " + computePerimetr();
     }
 }
