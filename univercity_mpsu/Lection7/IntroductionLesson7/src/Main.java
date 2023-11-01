@@ -7,25 +7,28 @@ public class Main {
         System.out.print("\033[H\033[2J");
         System.out.flush();
 
-        System.out.println("\n\t\tCreate triangle: ");
-        Triangle f1 = new Triangle();
-        System.out.println(f1.toString());
+        // System.out.println("\n\t\tCreate triangle: ");
+        // Triangle f1 = new Triangle();
+        // System.out.println(f1.toString());
 
-        // (1 1) (1 3) (3 3) (3 1) work
-        System.out.println("\n\t\tCreate square: ");
-        Square f2 = new Square();
-        System.out.println(f2.toString());
+        // // (1 1) (1 3) (3 3) (3 1) work
+        // System.out.println("\n\t\tCreate square: ");
+        // Square f2 = new Square();
+        // System.out.println(f2.toString());
 
-        // (1 2) (2 3) (3 2) (2 1) work
-        System.out.println("\n\t\tCreate rhomb: ");
-        Rhomb f3 = new Rhomb();
-        System.out.println(f3.toString());
+        // // (1 2) (2 3) (3 2) (2 1) work
+        // System.out.println("\n\t\tCreate rhomb: ");
+        // Rhomb f3 = new Rhomb();
+        // System.out.println(f3.toString());
 
-        // (1 1) (2 3) (5 3) (4 1) work
-        System.out.println("\n\t\tCreate parallelogram: ");
-        Parallelogram f4 = new Parallelogram();
-        System.out.println(f4.toString());
+        // // (1 1) (2 3) (5 3) (4 1) work
+        // System.out.println("\n\t\tCreate parallelogram: ");
+        // Parallelogram f4 = new Parallelogram();
+        // System.out.println(f4.toString());
 
+        System.out.println("\n\t\tCreate polygon: ");
+        Polygon f5 = new Polygon();
+        System.out.println(f5.toString());
     }
 
     // private static double distanceBetweenPoint(Point2D p1, Point2D p2)

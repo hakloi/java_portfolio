@@ -1,39 +1,88 @@
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
 import baseFold.Figure;
 import baseFold.Point2D;
 
 public class Polygon extends Figure {
+    private int numPoints;
+    private double[] angles;
+
     public Polygon() {
         perimetr = 0;
         area = 0;
-        int numPoints;
+        int numPoints = 1;
+        boolean exitLoop = false;
 
-        do {
-            System.out.print("Enter the number of points in the polygon: ");
-            numPoints = inputInt();
-        } while (numPoints < 3);
+        System.out.print("Enter the number of points in the polygon: ");
+        Scanner sc = new Scanner(System.in);
+        try {
+            numPoints = sc.nextInt();
+        } catch (InputMismatchException ex) { // вводимое значение не соответствует о типу данных
+            System.out.println("It is not a number!");
+        }
+        sc.close();
 
-        points = new Point2D[numPoints];
-        sides = new double[numPoints];
-        type = "polygon";
+        if (numPoints > 3) {
+            points = new Point2D[numPoints];
+            sides = new double[numPoints];
+            type = "polygon";
+        } else {
+            System.out.println("Sorry, are you sure you want a polygon?");
+            if (numPoints < 3){ System.out.printf("\nThere are not figure with %d coords", numPoints);}
+            else if(numPoints == 3){System.out.println("\nIt seems like you want triangle. Use appropriate function!");}
+        }
 
-        while (!checkPolygon()) {
+
+        for (int i = 0; i < points.length; i++ ) {
             inputPolygon();
             calcSides();
-            if (!checkPolygon())
-                System.err.println("Wrong points! Can't build polygon, try again!");
+            if (checkPolygon()) {
+                exitLoop = true;
+                break;
+            } else {
+                System.err.println("Wrong points! Can't build regular polygon, try again!");
+            }
         }
-        perimetr = computePerimetr();
-        area = computeArea();
+
+        if (exitLoop) {
+            perimetr = computePerimetr();
+            area = computeArea();
+        } else {
+
+            System.err.println("Couldn't build a regular polygon with the given points!");
+        }
     }
 
-    private void inputPolygon() {
-        for (int i = 0; i < points.length; i++) {
-            System.out.println("Enter coordinates of point " + (i + 1) + ":");
-            double x = inputDouble("Enter x: ");
-            double y = inputDouble("Enter y: ");
-            points[i] = new Point2D(x, y);
-        }
-    }
+
+
+    // @Override
+    // public double computeArea() {
+        
+    // }
+
+    // @Override
+    // public double computePerimetr()
+    // {
+
+    // }
+
+    // private void calcAngles() {
+    //     for (int i = 0; i < numPoints; i++) {
+    //         double side1 = sides[i];
+    //         double side2 = sides[(i + 1) % numPoints]; // индекс следующей стороны в круговом порядке
+    //         double side3 = sides[(i + 2) % numPoints]; // индекс стороны после следующей стороны
+    
+    //         // Вычисление угла между сторонами с помощью закона косинусов
+    //         double angle = Math.acos((side1 * side1 + side2 * side2 - side3 * side3) / (2 * side1 * side2));
+    //         angle = Math.toDegrees(angle);
+    
+    //         angles[i] = angle;
+    //     }
+    // }
+
+
+    private void inputPolygon() { inputPoint2d(); }
 
     private void calcSides() {
         for (int i = 0; i < sides.length; i++)
@@ -47,24 +96,22 @@ public class Polygon extends Figure {
     }
 
     private boolean checkPolygon() {
-        for (int i = 0; i < sides.length; i++) {
-            if (sides[i] <= 0)
-                return false;
+        boolean allSidesEqual = true;
+        boolean allAnglesEqual = true;
+
+        // equal sides
+        for (int i = 0; i < sides.length - 1; i++) {
+            if (sides[i] != sides[i + 1]) {
+                allSidesEqual = false;
+                break;
+            }
         }
-        return true;
+
+        return allSidesEqual && allAnglesEqual;
     }
 
     @Override
     public String toString() {
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("Polygon:\n");
-        stringBuilder.append("Perimeter: ").append(perimetr).append("\n");
-        stringBuilder.append("Area: ").append(area).append("\n");
-        stringBuilder.append("Sides: ");
-        for (double side : sides) {
-            stringBuilder.append(side).append(", ");
-        }
-        stringBuilder.append("\n");
-        return stringBuilder.toString();
+        return "\nArea = " + area + "\nPerimeter = " + perimetr;
     }
 }
