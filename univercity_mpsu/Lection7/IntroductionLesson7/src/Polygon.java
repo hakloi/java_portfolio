@@ -27,6 +27,25 @@ public class Polygon extends Figure {
             points = new Point2D[numPoints];
             sides = new double[numPoints];
             type = "polygon";
+                
+            for (int i = 0; i < points.length; i++ ) {
+                inputPolygon();
+                calcSides();
+                if (checkPolygon()) {
+                    exitLoop = true;
+                    break;
+                } else {
+                    System.err.println("Wrong points! Can't build regular polygon, try again!");
+                }
+            }
+
+            if (exitLoop) {
+                perimetr = computePerimetr();
+                area = computeArea();
+            } else {
+
+                System.err.println("Couldn't build a regular polygon with the given points!");
+            }
         } else {
             System.out.println("Sorry, are you sure you want a polygon?");
             if (numPoints < 3){ System.out.printf("\nThere are not figure with %d coords", numPoints);}
@@ -34,24 +53,8 @@ public class Polygon extends Figure {
         }
 
 
-        for (int i = 0; i < points.length; i++ ) {
-            inputPolygon();
-            calcSides();
-            if (checkPolygon()) {
-                exitLoop = true;
-                break;
-            } else {
-                System.err.println("Wrong points! Can't build regular polygon, try again!");
-            }
-        }
 
-        if (exitLoop) {
-            perimetr = computePerimetr();
-            area = computeArea();
-        } else {
 
-            System.err.println("Couldn't build a regular polygon with the given points!");
-        }
     }
 
 
@@ -106,6 +109,7 @@ public class Polygon extends Figure {
                 break;
             }
         }
+        // equal angles 
 
         return allSidesEqual && allAnglesEqual;
     }
