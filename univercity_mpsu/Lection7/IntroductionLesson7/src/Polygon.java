@@ -5,8 +5,6 @@ import baseFold.Figure;
 import baseFold.Point2D;
 
 public class Polygon extends Figure {
-    private int numPoints;
-    private double[] angles;
 
     public Polygon() {
         perimetr = 0;
@@ -21,7 +19,6 @@ public class Polygon extends Figure {
         } catch (InputMismatchException ex) { // вводимое значение не соответствует о типу данных
             System.out.println("It is not a number!");
         }
-        sc.close();
 
         if (numPoints > 3) {
             points = new Point2D[numPoints];
@@ -51,38 +48,22 @@ public class Polygon extends Figure {
             if (numPoints < 3){ System.out.printf("\nThere are not figure with %d coords", numPoints);}
             else if(numPoints == 3){System.out.println("\nIt seems like you want triangle. Use appropriate function!");}
         }
-
-
-
-
+        sc.close();
     }
 
 
 
-    // @Override
-    // public double computeArea() {
-        
-    // }
-
-    // @Override
-    // public double computePerimetr()
-    // {
-
-    // }
-
-    // private void calcAngles() {
-    //     for (int i = 0; i < numPoints; i++) {
-    //         double side1 = sides[i];
-    //         double side2 = sides[(i + 1) % numPoints]; // индекс следующей стороны в круговом порядке
-    //         double side3 = sides[(i + 2) % numPoints]; // индекс стороны после следующей стороны
-    
-    //         // Вычисление угла между сторонами с помощью закона косинусов
-    //         double angle = Math.acos((side1 * side1 + side2 * side2 - side3 * side3) / (2 * side1 * side2));
-    //         angle = Math.toDegrees(angle);
-    
-    //         angles[i] = angle;
-    //     }
-    // }
+    @Override
+    public double computeArea() {
+       double area = 0;
+       for (int i = 0; i < points.length; i++) {
+           int j = (i + 1) % points.length;
+           area += points[i].getX() * points[j].getY();
+           area -= points[i].getY() * points[j].getX();
+       }
+       area = Math.abs(area) / 2.0;
+       return area;
+    }
 
 
     private void inputPolygon() { inputPoint2d(); }

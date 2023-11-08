@@ -46,56 +46,12 @@ public class Main {
                 System.out.println(f4.toString());
                 break;
             case 5: 
-                System.out.println("\nCreate polygon: ");
+                // 8 , 3 0 , 2 1, 2 2, 3 3, 4 3, 5 2, 5 1, 5 0 
+                System.out.println("\nCreate regular polygon: ");
                 Polygon f5 = new Polygon();
                 System.out.println(f5.toString());
                 break;
         }
         sc.close();
     }
-
-    // private static double distanceBetweenPoint(Point2D p1, Point2D p2)
-    // {
-    //     return Math.sqrt(
-    //             Math.pow((p1.getX() - p2.getX()), 2) +
-    //                     Math.pow(p1.getY() - p2.getY(), 2));
-    // }
-
-    // public static double computeArea(Point2D p1, Point2D p2, Point2D p3)
-    // {
-    //     double sideA = distanceBetweenPoint(p1, p2);
-    //     double sideB = distanceBetweenPoint(p2, p3);
-    //     double sideC = distanceBetweenPoint(p3, p1);
-    //     return computeArea(sideA, sideB, sideC);
-    // }
-
-    // public static double computeArea(Point2D p1, Point2D p2, Point2D p3, Point2D p4)
-    // {
-    //     double sideA = distanceBetweenPoint(p1, p2);
-    //     double sideB = distanceBetweenPoint(p2, p3);
-    //     double sideC = distanceBetweenPoint(p3, p4);
-    //     double sideD = distanceBetweenPoint(p4, p1);
-    //     return computeArea(sideA,sideB,sideC,sideD);
-    // }
-
-    // public static double computeArea(double sideA, double sideB, double sideC)
-    // {
-    //     double s = ((sideA) + (sideB) + (sideC))/2; 
-    //     return Math.sqrt(s * (s - sideA) * (s - sideB) * (s - sideC));
-    // }
-
-    // public static double computeArea(double sideA, double sideB, double sideC, double sideD)
-    // {
-    //     double s = (sideA + sideB + sideC + sideD) / 2;
-    //     return Math.sqrt((s - sideA) * (s - sideB) * (s - sideC) * (s - sideD));
-    // }
-
-    // public static double computeArea(double side, double height, String type) throws Exception {
-    //     if (type.equals("triangle"))
-    //         return side * height/2;
-    //     else if (type.equals("quadro"))
-    //         return  side * height;
-    //     else throw new Exception("Wrong type");
-    // }
-
 }
