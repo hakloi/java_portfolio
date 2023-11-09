@@ -52,6 +52,6 @@ public class Square extends Figure {
 
     @Override
     public String toString() {
-        return "\nArea = " + computeArea() + "\nPerimeter = " + computePerimetr();
+        return "\nArea = " + area + "\nPerimeter = " + perimetr;
     }
 }

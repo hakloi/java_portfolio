@@ -84,6 +84,6 @@ public class Parallelogram extends Figure {
 
     @Override
     public String toString() {
-        return "\nArea = " + area + "\nPerimeter = " + computePerimetr();
+        return "\nArea = " + area + "\nPerimeter = " + perimetr;
     }
 }

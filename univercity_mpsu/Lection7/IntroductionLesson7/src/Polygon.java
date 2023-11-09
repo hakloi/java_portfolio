@@ -23,7 +23,7 @@ public class Polygon extends Figure {
         if (numPoints > 3) {
             points = new Point2D[numPoints];
             sides = new double[numPoints];
-            type = "polygon";
+            type = "mnogo";
                 
             for (int i = 0; i < points.length; i++ ) {
                 inputPolygon();

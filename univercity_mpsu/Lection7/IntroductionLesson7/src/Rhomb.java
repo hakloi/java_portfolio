@@ -56,6 +56,7 @@ public class Rhomb extends Figure {
     private boolean checkRhomb() {
         boolean allSidesEqual = true;
         boolean diagonalsPerpendicular = true;
+        boolean equalDiagonals = false;
 
         // equal sides
         for (int i = 0; i < sides.length - 1; i++) {
@@ -80,11 +81,18 @@ public class Rhomb extends Figure {
             diagonalsPerpendicular = false;
         }
 
-        return allSidesEqual && diagonalsPerpendicular; // BOTH!!!!!!
+        double d1 = distanceBetweenPoint(points[0], points[2]);
+        double d2 = distanceBetweenPoint(points[1], points[3]);
+        if (Double.compare(d1, d2) != 0) {
+            equalDiagonals = true;
+        }
+        
+
+        return allSidesEqual && diagonalsPerpendicular || equalDiagonals; 
     }
 
     @Override
     public String toString() {
-        return "\nArea = " + area + "\nPerimeter = " + computePerimetr();
+        return "\nArea = " + area + "\nPerimeter = " + perimetr;
     }
 }
