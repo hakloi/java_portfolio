@@ -1,0 +1,30 @@
+Line: The tree has entered my hands,
+Vowels: 9, 
+Consonants: 15
+Line: The sap has ascended my arms,
+Vowels: 8, 
+Consonants: 15
+Line: The tree has grown in my breast-
+Vowels: 9, 
+Consonants: 16
+Line: Downward,
+Vowels: 2, 
+Consonants: 6
+Line: The branches grow out of me, like arms.
+Vowels: 11, 
+Consonants: 19
+Line: Tree you are,
+Vowels: 7, 
+Consonants: 3
+Line: Moss you are,
+Vowels: 6, 
+Consonants: 4
+Line: You are violets with wind above them.
+Vowels: 14, 
+Consonants: 16
+Line: A child - so high - you are,
+Vowels: 9, 
+Consonants: 9
+Line: And all this is folly to the world.
+Vowels: 9, 
+Consonants: 18

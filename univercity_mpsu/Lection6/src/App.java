@@ -8,7 +8,6 @@ public class App {
 
         System.out.print(spar.toString());
 
-
         System.out.println();
         String[] categories = {"1", "dasha", "loch"};
         Supermarket sup = new Supermarket(2, 5, items, 1000.0, categories);
