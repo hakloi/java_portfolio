@@ -6,14 +6,16 @@ import java.awt.event.ActionListener;
 public class App extends JFrame {
     private JButton[][] buttons; // matrix
     private boolean xTurn;
-    private ImageIcon xIcon = new ImageIcon("..//apps//TicTacToe_game//cat.jpg");
-    // private ImageIcon oIcon = new ImageIcon("path/to/oImage.jpg");
+    private ImageIcon xIcon = new ImageIcon("C:/Users/HP/Desktop/portfolio/java_portfolio/apps/TicTacToe_game/images/cat.png");
+    private ImageIcon oIcon = new ImageIcon("C:/Users/HP/Desktop/portfolio/java_portfolio/apps/TicTacToe_game/images/kitten.png");
+    ImageIcon logo = new ImageIcon("C:/Users/HP/Desktop/portfolio/java_portfolio/apps/TicTacToe_game/images/logo.png");
 
     public App() {
         super("Cats & kittens"); // наследование от JFrame (заголовок)
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(400, 500);
         setLocationRelativeTo(null); // null - в середине
+        setIconImage(logo.getImage());
     
         xTurn = true;
         buttons = new JButton[3][3];
@@ -25,7 +27,7 @@ public class App extends JFrame {
                 button.setPreferredSize(new Dimension(50, 50));
                 button.addActionListener(new ButtonListener(i, j));
                 buttons[i][j] = button;
-                // panel.setBackground(Color.WHITE);
+                panel.setBackground(Color.CYAN);
                 panel.add(button);
             }
         }
@@ -33,8 +35,8 @@ public class App extends JFrame {
         setVisible(true);
     }
 
-    private void makeMove(int row, int col) {
-        buttons[row][col].setText(xTurn ? "X" : "O");
+    private void makeMove(int row, int col, ImageIcon xIcon, ImageIcon oIcon) {
+        buttons[row][col].setIcon(xTurn ? xIcon : oIcon);
         buttons[row][col].setEnabled(false);
         xTurn = !xTurn;
     }
@@ -50,7 +52,7 @@ public class App extends JFrame {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            makeMove(row, col);
+            makeMove(row, col, xIcon,oIcon);
         }
     }
 
