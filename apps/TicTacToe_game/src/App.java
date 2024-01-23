@@ -8,9 +8,9 @@ public class App extends JFrame {
     private JButton restartButton;
     private JLabel statusLabel;
     private boolean xTurn;
-    private ImageIcon xIcon = new ImageIcon("C:/Users/HP/Desktop/portfolio/java_portfolio/apps/TicTacToe_game/images/cat.png");
-    private ImageIcon oIcon = new ImageIcon("C:/Users/HP/Desktop/portfolio/java_portfolio/apps/TicTacToe_game/images/kitten.png");
-    ImageIcon logo = new ImageIcon("C:/Users/HP/Desktop/portfolio/java_portfolio/apps/TicTacToe_game/images/logo.png");
+    private ImageIcon xIcon = new ImageIcon("../TicTacToe_game/images/cat.png");
+    private ImageIcon oIcon = new ImageIcon("../TicTacToe_game/images/kitten.png");
+    ImageIcon logo = new ImageIcon("../TicTacToe_game/images/logo.png");
 
     public App() {
         super("Cats & kittens"); // наследование от JFrame (заголовок)
@@ -42,42 +42,81 @@ public class App extends JFrame {
         statusLabel = new JLabel("Cat's Turn");
         statusLabel.setHorizontalAlignment(SwingConstants.CENTER);
         statusLabel.setPreferredSize(new Dimension(100, 50));
-        statusLabel.setFont(new Font("Arial", Font.BOLD, 20));
+        statusLabel.setFont(new Font("Arial", Font.BOLD, 15));
         panel.add(statusLabel);
         setVisible(true);
     }
-
     // game logic
     private void makeMove(int row, int col, ImageIcon xIcon, ImageIcon oIcon) {
         buttons[row][col].setIcon(xTurn ? xIcon : oIcon);
         buttons[row][col].setEnabled(false);
         xTurn = !xTurn;
-        checkWin();
+        if (checkWin()) { //закончилась ли игра
+            statusLabel.setText((xTurn ? "Cats" : "Kittens") + " win!");
+        } else if (checkDraw()) {
+            statusLabel.setText("Draw! Cats and kittens have made peace");
+        } else {
+            statusLabel.setText(xTurn ? "Cat's Turn" : "Kitten's Turn");
+        }
     }
 
-    private void checkWin(){
-        for (int i = 0; i < 3;){
-            //горизонтально
-            if (buttons[i][0].getIcon() == buttons[i][1].getIcon() &&
-            buttons[i][1].getIcon() == buttons[i][2].getIcon()  &&
-            buttons[i][0].getIcon() !=  null);
-            statusLabel.setText((xTurn ? "Cats" : "Kittens" ) + " win!");
-            disableButtons();
-            return;
+    private boolean checkDraw(){
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++){
+                if (buttons[i][j].isEnabled()) {
+                    return false;
+                }
+            }
         }
+        return true;
+    }
+    private boolean checkWin() {
+        // горизонталь
+        for (int i = 0; i < 3; i++) {
+            if (buttons[i][0].getIcon() != null &&
+                    buttons[i][0].getIcon().equals(buttons[i][1].getIcon()) &&
+                    buttons[i][1].getIcon().equals(buttons[i][2].getIcon())) {
+                disableButtons();
+                return true;
+            }
+        }
+        // вертикаль
+        for (int i = 0; i < 3; i++) {
+            if (buttons[0][i].getIcon() != null &&
+                    buttons[0][i].getIcon().equals(buttons[1][i].getIcon()) &&
+                    buttons[1][i].getIcon().equals(buttons[2][i].getIcon())) {
+                disableButtons();
+                return true;
+            }
+        }
+        // диагональ
+        if (buttons[0][0].getIcon() != null &&
+                buttons[0][0].getIcon().equals(buttons[1][1].getIcon()) &&
+                buttons[1][1].getIcon().equals(buttons[2][2].getIcon())) {
+            disableButtons();
+            return true;
+        }
+        if (buttons[0][2].getIcon() != null &&
+                buttons[0][2].getIcon().equals(buttons[1][1].getIcon()) &&
+                buttons[1][1].getIcon().equals(buttons[2][0].getIcon())) {
+            disableButtons();
+            return true;
+        }
+        return false;
     }
     // buttons main & optional
     private class ButtonListener implements ActionListener {
         private int row;
         private int col;
 
-        public ButtonListener(int row, int col) {
-            this.row = row;
+        public ButtonListener(int row2, int col) {
+            this.row = row2;
             this.col = col;
         }
 
         @Override
         public void actionPerformed(ActionEvent e) {
+
             makeMove(row, col, xIcon,oIcon);
         }
     }
@@ -89,10 +128,11 @@ public class App extends JFrame {
             }
         }
     }
+    
     private class RestartButtonListening implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-            for (int i =0; i<0; i++){
+            for (int i =0; i<3; i++){
                 for (int j= 0; j < 3; j++) {
                     buttons[i][j].setIcon(null);
                     buttons[i][j].setEnabled(true);
