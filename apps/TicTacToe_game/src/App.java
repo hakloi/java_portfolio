@@ -18,7 +18,6 @@ public class App extends JFrame {
         setSize(400, 500);
         setLocationRelativeTo(null); // null - в середине
         setIconImage(logo.getImage());
-    
         xTurn = true;
         buttons = new JButton[3][3];
         JPanel panel = new JPanel(new GridLayout(4, 3));
