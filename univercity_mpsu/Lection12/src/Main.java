@@ -37,7 +37,7 @@ public class Main {
         System.out.println();
 
         //getLast()
-        System.out.println("Last el: " + linkedList.getLast());
+        System.out.println("Last el: " + linkedList.peekLast());
         System.out.println();
 
         //ArrayList 
