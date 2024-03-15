@@ -2,11 +2,23 @@ package com.example.demo;
 
 public class HomePage extends BaseInfoPage implements WebPage{
 
+    private String description;
     public HomePage(){
-        header = "There is a guide which navigate you to use our website.";
+        header = "Home Page";
+    }
+
+    public void setDescription(String description){
+        this.description = description;
     }
     @Override
     public void displayContent() {
+    }
+
+    @Override
+    public String toString() {
+        return "HomePage{" +
+                "description='" + description + '\'' +
+                '}';
     }
 }
 
