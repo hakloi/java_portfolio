@@ -21,4 +21,3 @@ public class HomePage extends BaseInfoPage implements WebPage{
                 '}';
     }
 }
-
