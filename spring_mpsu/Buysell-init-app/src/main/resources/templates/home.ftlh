@@ -7,6 +7,7 @@
     <h1> Hello, guys!</h1> 
     We have a lot of adherents in cryptology over the world!
     Register on the site if you want to participate in discussions.
-    <img src="@{/resources/static/images/welcome.jpg}"/>
+    
+    <img src="/images/welcome.jpg" width="300" height="400">
 </body>
 </html>
