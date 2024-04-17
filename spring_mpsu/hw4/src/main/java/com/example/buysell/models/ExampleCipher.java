@@ -1,9 +1,12 @@
 package com.example.buysell.models;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
-public class Item {
+@AllArgsConstructor
+public class ExampleCipher {
+    private Long id;
     private String title;
     private String description;
     private String creator;
