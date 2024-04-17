@@ -9,7 +9,6 @@
     Register on the site if you want to participate in discussions.
     <hr>
     <img src="/images/welcome.jpg" width="300" height="400">
-
     <h4>List of the most popular ciphers:<h4>
 </body>
 </html>
