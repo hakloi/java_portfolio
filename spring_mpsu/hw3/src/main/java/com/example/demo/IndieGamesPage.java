@@ -1,5 +1,7 @@
 package com.example.demo;
+import org.springframework.stereotype.Component;
 
+@Component
 public class IndieGamesPage extends BaseInfoPage implements WebPage{
     private String popularChoice;
 
