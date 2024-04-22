@@ -24,14 +24,6 @@
         Description: <input type="text" name="description"/><br><br>
         Creator: <input type="text" name="creator"/><br><br>
         Year: <input type= "number" name="yearCreated"/> <br></br>
-        Encryption Type:
-        <select name="encryptionType">
-            <option value="ASYNCHRONOUS">ASYNCHRONOUS</option>
-            <option value="SYNCHRONOUS">SYNCHRONOUS</option>
-            <option value="HYBRID">HYBRID</option>
-            <option value="CLASSIC">CLASSIC</option>
-            <option value="WITHOUT_KEY">WITHOUT KEY</option>
-        </select><br></br>
         <input type="submit" value="Add a new cipher"/>
     </form>
 </body>

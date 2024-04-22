@@ -10,7 +10,6 @@
     <b>Description: </b>${cipher.description}<br>
     <b>Creator: </b>${cipher.creator}<br>
     <b>Year: </b>${cipher.yearCreated}<br>
-    <b>EncryptionType: </b>${cipher.encryptionType}<br>
     <hr>
 <form action="/cipher/delete/${cipher.id}" method="post">
     <input type="submit" value="Delete cipher"/>

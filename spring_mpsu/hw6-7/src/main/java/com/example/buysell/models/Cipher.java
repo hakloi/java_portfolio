@@ -33,14 +33,15 @@ public class Cipher {
 
     @Column(name = "year")
     private int yearCreated;
-    public EncryptionType type;
-    
+
     // @Column(name = "EncryptionType")
-    public enum EncryptionType {
-        ASYNCHRONOUS,
-        SYNCHRONOUS,
-        HYBRID,
-        CLASSIC, 
-        WITHOUT_KEY
-    }
+    // private EncryptionType type;
+    
+    // public enum EncryptionType {
+    //     ASYNCHRONOUS,
+    //     SYNCHRONOUS,
+    //     HYBRID,
+    //     CLASSIC, 
+    //     WITHOUT_KEY
+    // }
 }
