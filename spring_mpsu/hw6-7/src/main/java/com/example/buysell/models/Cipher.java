@@ -11,29 +11,29 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-// @Entity
-// @Table(name = "cipheraficionado")
+@Entity
+@Table(name = "cipheraficionado")
 @Data
 @AllArgsConstructor
-// @NoArgsConstructor
+@NoArgsConstructor
 public class Cipher {
-    // @Id
-    // @GeneratedValue(strategy = GenerationType.AUTO)
-    // @Column(name = "id")
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
     private Long id;
 
-    // @Column(name = "title")
+    @Column(name = "title")
     private String title;
 
-    // @Column(name = "desc", columnDefinition = "text")
+    @Column(name = "desc", columnDefinition = "text")
     private String description;
 
-    // @Column(name = "creator")
+    @Column(name = "creator")
     private String creator;
 
-    // @Column(name = "year")
+    @Column(name = "year")
     private int yearCreated;
-    private EncryptionType type;
+    public EncryptionType type;
     
     // @Column(name = "EncryptionType")
     public enum EncryptionType {

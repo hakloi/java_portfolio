@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Cipher {
+public class BuysellApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Cipher.class, args);
+		SpringApplication.run(BuysellApplication.class, args);
 	}
 
 }

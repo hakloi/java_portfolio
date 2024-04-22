@@ -5,6 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.buysell.models.Cipher;
 import com.example.buysell.service.CipherService;
@@ -17,8 +18,8 @@ public class HomeController {
     private final CipherService cipherService;
 
     @GetMapping("/")
-    public String home(Model model) { //Model model
-        model.addAttribute("ciphers", cipherService.listCiphers());
+    public String home(@RequestParam(name="title", required = false)String title, Model model) { //Model model
+        model.addAttribute("ciphers", cipherService.listCiphers(title));
         return "home";
     }
 

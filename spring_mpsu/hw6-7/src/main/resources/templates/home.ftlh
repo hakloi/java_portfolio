@@ -15,6 +15,7 @@
         <div>
             <p><b>${cipher.title}</b> ${cipher.creator} | <a href="/cipher/${cipher.id}">More...</a></p>
         </div>
+        <#else><h4>List is empty</h4>
     </#list>
     <hr>
     <h3>Add a new cipher</h3>
