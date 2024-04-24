@@ -16,15 +16,6 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @RequiredArgsConstructor
 public class CipherService {
-    // {
-    //     ciphers.add(new Cipher(++id, "Jefferson disk", 
-    //     "The Jefferson Disk is a manual polyalphabetic substitution cipher system, invented in 1795 by Thomas Jefferson, the 3rd President of the United States", 
-    //     "Thomas Jefferson", 1790, EncryptionType.CLASSIC ));
-
-    //     ciphers.add(new Cipher(++id, "Caesar cipher", 
-    //     "a simple encryption technique that was used by Julius Caesar to send secret messages to his allies.", 
-    //     "Julius Caesar", 0, EncryptionType.CLASSIC ));
-    // }
 
     private final CipherRepository cipherRepository;
 

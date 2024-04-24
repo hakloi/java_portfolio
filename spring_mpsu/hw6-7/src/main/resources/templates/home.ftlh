@@ -11,20 +11,25 @@
     <img src="/images/welcome.jpg" width="300" height="400">
     <h4>List of the most popular ciphers:<h4>
 
-    <#list ciphers as cipher>
+<form action="/" method="get">
+    Search by name of cipher: <input type="text" name="title"><br>
+    <input type="submit" value="Search"/>
+</form>
+
+<#list ciphers as cipher>
         <div>
             <p><b>${cipher.title}</b> ${cipher.creator} | <a href="/cipher/${cipher.id}">More...</a></p>
         </div>
         <#else><h4>List is empty</h4>
-    </#list>
-    <hr>
-    <h3>Add a new cipher</h3>
-    <form action="/cipher/create" method="post">
+</#list>
+<hr>
+<h3>Add a new cipher</h3>
+<form action="/cipher/create" method="post">
         Name: <input type="text" name="title"/><br><br>
         Description: <input type="text" name="description"/><br><br>
         Creator: <input type="text" name="creator"/><br><br>
         Year: <input type= "number" name="yearCreated"/> <br></br>
         <input type="submit" value="Add a new cipher"/>
-    </form>
+</form>
 </body>
 </html>
