@@ -12,9 +12,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.test.web.servlet.MockMvc;
 
-import com.example.buysell.controllers.HomeController;
+import com.example.buysell.controllers.CipherController;
 
-@WebMvcTest(HomeController.class)
+@WebMvcTest(CipherController.class)
 public class HomeControllerTest {
     
     @Autowired

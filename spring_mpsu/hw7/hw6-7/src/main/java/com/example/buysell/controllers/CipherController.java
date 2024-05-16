@@ -5,6 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.buysell.models.Cipher;
 import com.example.buysell.service.CipherService;
@@ -13,13 +14,13 @@ import lombok.RequiredArgsConstructor;
 
 @Controller
 @RequiredArgsConstructor
-public class HomeController {
+public class CipherController {
     private final CipherService cipherService;
 
     @GetMapping("/")
-    public String home(Model model) { //Model model
-        model.addAttribute("ciphers", cipherService.listCiphers());
-        return "home";
+    public String ciphers(@RequestParam(name="title", required = false)String title, Model model) { //Model model
+        model.addAttribute("ciphers", cipherService.listCiphers(title));
+        return "ciphers";
     }
 
     @PostMapping("/cipher/create")

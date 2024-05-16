@@ -9,12 +9,20 @@
     Register on the site if you want to participate in discussions.
     <hr>
     <img src="/images/welcome.jpg" width="300" height="400">
-    <h4>List of the most popular ciphers:<h4>
+    <h4>List of the most popular ciphers:<h4><br>
+        
+    <form action="/" method="get">
+        Search by title: <input type="text" name="title"> <br>
+        <input type="submit" value="Search"/>
+    </form>
+
 
     <#list ciphers as cipher>
         <div>
             <p><b>${cipher.title}</b> ${cipher.creator} | <a href="/cipher/${cipher.id}">More...</a></p>
         </div>
+        <#else>
+        <h3>List is empty</h3>
     </#list>
     <hr>
     <h3>Add a new cipher</h3>

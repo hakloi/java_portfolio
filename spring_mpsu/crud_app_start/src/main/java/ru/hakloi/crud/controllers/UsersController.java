@@ -24,13 +24,13 @@ public class UsersController {
     public String index(Model model){
         // get list of people from DAO -> view
         model.addAttribute("users", userDAO.index());
-        return "users/index";
+        return "/index";
     }
 
     @GetMapping("/{id}")
     public String show(@PathVariable("id") int id, Model model){
         // get one person by id from DAO -> view
         model.addAttribute("user", userDAO.show(id));
-        return "users/show";
+        return "/show";
     }
 }

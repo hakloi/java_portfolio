@@ -13,7 +13,7 @@ import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring5.view.ThymeleafViewResolver;
 
 @Configuration
-@ComponentScan("ru.alishev.springcourse")
+@ComponentScan("ru.hakloi.crud")
 @EnableWebMvc
 public class SpringConfig implements WebMvcConfigurer {
 
@@ -28,7 +28,7 @@ public class SpringConfig implements WebMvcConfigurer {
     public SpringResourceTemplateResolver templateResolver() {
         SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
         templateResolver.setApplicationContext(applicationContext);
-        templateResolver.setPrefix("/WEB-INF/views/");
+        templateResolver.setPrefix("/views/");
         templateResolver.setSuffix(".html");
         return templateResolver;
     }
